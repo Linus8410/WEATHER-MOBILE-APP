@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#08153C"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Mostly Cloudy"
+               android:textColor="@color/white"
+               android:textAlignment="center"
+               android:id="@+id/txt1"
+               android:textSize="20sp"
+               android:textStyle="bold"/>
+
+           <ImageView
+               android:id="@+id/img1"
+               android:layout_width="150dp"
+               android:src="@drawable/baseline_wb_sunny_24"
+               android:layout_height="150dp"
+               android:layout_gravity="center"
+               android:layout_marginTop="16dp"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Mon June 17 | 2:00PM "
+               android:textStyle="bold"
+               android:textColor="@color/white"
+               android:id="@+id/txt2"
+               android:layout_marginTop="16dp"
+               android:textAlignment="center"
+               android:textSize="18dp"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:text="30°"
+               android:id="@+id/txt3"
+               android:textAlignment="center"
+               android:textSize="60sp"
+               android:textStyle="italic"
+               android:textColor="#FF0000"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="H:27   L:18"
+               android:id="@+id/txt4"
+               android:textColor="@color/white"
+               android:textStyle="bold"
+               android:textAlignment="center"
+               android:textSize="18sp"/>
+
+           <GridLayout
+               android:layout_width="match_parent"
+               android:layout_height="112dp"
+               android:layout_marginTop="20dp"
+               android:columnCount="3"
+               android:rowCount="3">
+
+              <androidx.cardview.widget.CardView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_row="0"
+                  app:cardUseCompatPadding="true"
+                  android:id="@+id/raincard"
+                  android:layout_rowWeight="1"
+                  android:layout_column="0"
+                  android:layout_columnWeight="1"
+                  android:layout_gravity="fill"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="8dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical|center_horizontal"
+                      android:gravity="center"
+                      android:orientation="vertical">
+                      <ImageView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:src="@drawable/sharp_cloud_24"
+                          />
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Cloudy"
+                          android:textSize="18sp"
+                          />
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="22%"
+                          android:textSize="18sp"
+                          />
+
+
+                  </LinearLayout>
+               </androidx.cardview.widget.CardView>
+               <androidx.cardview.widget.CardView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_row="0"
+                   app:cardUseCompatPadding="true"
+                   android:id="@+id/humiditycard"
+                   android:layout_rowWeight="1"
+                   android:layout_column="2"
+                   android:layout_columnWeight="1"
+                   android:layout_gravity="fill"
+                   app:cardCornerRadius="8dp"
+                   app:cardElevation="8dp">
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center_vertical|center_horizontal"
+                       android:gravity="center"
+                       android:orientation="vertical">
+                       <ImageView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Rain"
+                           android:textSize="18sp"
+                           />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="22%"
+                           android:textSize="18sp"
+                           />
+                   </LinearLayout>
+               </androidx.cardview.widget.CardView>
+               <androidx.cardview.widget.CardView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_row="0"
+                   app:cardUseCompatPadding="true"
+                   android:id="@+id/windcard"
+                   android:layout_rowWeight="1"
+                   android:layout_column="1"
+                   android:layout_columnWeight="1"
+                   android:layout_gravity="fill"
+                   app:cardCornerRadius="8dp"
+                   app:cardElevation="8dp">
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center_vertical|center_horizontal"
+                       android:gravity="center"
+                       android:orientation="vertical">
+                       <ImageView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:src="@drawable/baseline_water_drop_24"
+                           />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Humidity"
+                           android:textSize="18sp"
+                           />
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="22%"
+                           android:textSize="18sp"
+                           />
+                   </LinearLayout>
+               </androidx.cardview.widget.CardView>
+
+
+           </GridLayout>
+
+       </LinearLayout>
+
+   </ScrollView>
+</RelativeLayout>
+
+
+
+
