@@ -3,48 +3,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#08153C"
+    android:background="#192433"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
    <ScrollView
        android:layout_width="match_parent"
+       android:id="@+id/scrollview"
        android:layout_height="match_parent">
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:orientation="vertical">
+
            <TextView
+               android:id="@+id/cityname"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="Mostly Cloudy"
-               android:textColor="@color/white"
+               android:text="Nairobi"
+               android:layout_marginTop="8dp"
                android:textAlignment="center"
-               android:id="@+id/txt1"
+               android:textColor="@color/white"
                android:textSize="20sp"
-               android:textStyle="bold"/>
-
+               android:textStyle="bold" />
            <ImageView
-               android:id="@+id/img1"
                android:layout_width="150dp"
-               android:src="@drawable/baseline_wb_sunny_24"
                android:layout_height="150dp"
                android:layout_gravity="center"
-               android:layout_marginTop="16dp"/>
-           <TextView
+               android:id="@+id/img1"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="10dp"
+               android:src="@drawable/baseline_wb_sunny_24"/>
+
+
+
+
+           <EditText
                android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:text="Mon June 17 | 2:00PM "
-               android:textStyle="bold"
-               android:textColor="@color/white"
-               android:id="@+id/txt2"
-               android:layout_marginTop="16dp"
-               android:textAlignment="center"
-               android:textSize="18dp"/>
+               android:layout_height="40dp"
+               android:id="@+id/citysearch"
+               android:hint="City name "
+               android:inputType="textPersonName"
+               android:layout_marginStart="35dp"
+               android:layout_marginEnd="35dp"
+               android:textColorHint="@color/black"
+               android:background="@color/white"/>
+           <com.google.android.material.floatingactionbutton.FloatingActionButton
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:src="@drawable/baseline_search_24"
+               android:layout_gravity="end"
+               android:layout_marginTop="8dp"
+               android:layout_marginEnd="20dp"
+               android:id="@+id/searchbtn"/>
+
+
+
+
+
            <TextView
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:text="30°"
-               android:id="@+id/txt3"
+               android:id="@+id/maintmp"
                android:textAlignment="center"
                android:textSize="60sp"
                android:textStyle="italic"
@@ -52,17 +72,27 @@
            <TextView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="H:27   L:18"
-               android:id="@+id/txt4"
-               android:textColor="@color/white"
+               android:text="Cloudy"
+               android:id="@+id/description"
+               android:textColor="#0088FF"
                android:textStyle="bold"
                android:textAlignment="center"
-               android:textSize="18sp"/>
+               android:textSize="20sp"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Mon June 17 | 2:00PM "
+               android:textStyle="bold"
+               android:textColor="@color/white"
+               android:id="@+id/date"
+               android:layout_marginTop="16dp"
+               android:textAlignment="center"
+               android:textSize="18dp"/>
 
            <GridLayout
                android:layout_width="match_parent"
-               android:layout_height="112dp"
-               android:layout_marginTop="20dp"
+               android:layout_height="160dp"
+               android:layout_marginTop="10dp"
                android:columnCount="3"
                android:rowCount="3">
 
@@ -70,6 +100,7 @@
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:layout_row="0"
+                  app:cardBackgroundColor="@color/black"
                   app:cardUseCompatPadding="true"
                   android:id="@+id/raincard"
                   android:layout_rowWeight="1"
@@ -93,13 +124,19 @@
                       <TextView
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
-                          android:text="Cloudy"
-                          android:textSize="18sp"
+                          android:text="Pressure"
+                          android:textStyle="bold"
+                          android:textColor="@color/white"
+                          android:textSize="19sp"
                           />
+
                       <TextView
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
-                          android:text="22%"
+                          android:text="Pressure"
+                          android:id="@+id/pressure"
+                          android:textStyle="bold"
+                          android:textColor="@color/white"
                           android:textSize="18sp"
                           />
 
@@ -110,6 +147,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_row="0"
+                   app:cardBackgroundColor="@color/black"
                    app:cardUseCompatPadding="true"
                    android:id="@+id/humiditycard"
                    android:layout_rowWeight="1"
@@ -127,26 +165,35 @@
                        android:orientation="vertical">
                        <ImageView
                            android:layout_width="wrap_content"
+                           android:src="@drawable/baseline_thermostat_24"
                            android:layout_height="wrap_content"
                            />
                        <TextView
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
-                           android:text="Rain"
+                           android:text="Max-Temp"
+                           android:textStyle="bold"
+                           android:textColor="#FFFFFF"
                            android:textSize="18sp"
                            />
                        <TextView
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
-                           android:text="22%"
-                           android:textSize="18sp"
+                           android:text="30"
+                           android:textStyle="bold"
+                            android:id="@+id/maxtmp"
+                           android:textColor="@color/white"
+                           android:textSize="19sp"
                            />
+
+
                    </LinearLayout>
                </androidx.cardview.widget.CardView>
                <androidx.cardview.widget.CardView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_row="0"
+                   app:cardBackgroundColor="@color/black"
                    app:cardUseCompatPadding="true"
                    android:id="@+id/windcard"
                    android:layout_rowWeight="1"
@@ -162,28 +209,88 @@
                        android:layout_gravity="center_vertical|center_horizontal"
                        android:gravity="center"
                        android:orientation="vertical">
+
                        <ImageView
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
                            android:src="@drawable/baseline_water_drop_24"
-                           />
+                           android:textColor="@color/white" />
                        <TextView
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
                            android:text="Humidity"
-                           android:textSize="18sp"
+                           android:textStyle="bold"
+                           android:textColor="@color/white"
+                           android:textSize="19sp"
                            />
+
                        <TextView
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
-                           android:text="22%"
+                           android:id="@+id/humidity"
+                           android:text="Humidity"
+                           android:textStyle="bold"
+                           android:textColor="@color/white"
                            android:textSize="18sp"
                            />
+
+
                    </LinearLayout>
                </androidx.cardview.widget.CardView>
 
 
            </GridLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="horizontal">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Today"
+                   android:layout_marginStart="24dp"
+                   android:id="@+id/mintmp"
+                   android:layout_weight="1"
+                   android:textColor="@color/white"
+                   android:textStyle="bold"
+                   android:textSize="20sp"/>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_weight="1"
+                   android:id="@+id/txtnextday"
+                   android:layout_marginEnd="24dp"
+                   android:layout_height="wrap_content"
+                   android:text="Next7days>"
+                   android:textStyle="bold"
+                   android:textAlignment="viewEnd"
+                   android:textColor="@color/white"
+                   android:textSize="20sp"/>
+
+           </LinearLayout>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_marginTop="10dp"
+               android:background="@drawable/gradient_bg"
+               android:paddingStart="24dp"
+               android:id="@+id/recyclerView"
+               android:paddingEnd="24dp"
+               android:clipToPadding="false">
+
+
+
+
+
+
+
+
+
+
+           </androidx.recyclerview.widget.RecyclerView>
+
+
 
        </LinearLayout>
 
